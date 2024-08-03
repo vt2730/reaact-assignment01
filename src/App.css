@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+.customer-card {
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customer-card.selected {
+  /* border-color: #60a5fa; */
+  border: none !important;
+  background-color: rgb(237, 235, 235);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.customer-card:not(.selected) {
+  border-color: transparent;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.customer-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.customer-title {
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.customer-list {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.customer-list::-webkit-scrollbar {
+  display: none;
+}
+
+.customer-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.heading-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 0.5px solid rgb(237, 235, 235);
+}
+p{
+  margin: 0;
+}
+
+.customer-details {
+  height: 92vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 6rem;
+}
+
+.customer-info {
+  /* width: 100%;
+  height: 20%; */
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.customer-name {
+  font-size: 30px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.customer-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.photo-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.photo-container {
+  width: 100%;
+  padding-top: 120%;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 1000ms;
+}
+
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  transition-duration: 1000ms;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  overflow: hidden;
+}
+
+.customer-list-container {
+  width: 100%;
+  height: 100%;
+  grid-column: span 3;
+  border-right: 1px solid #d1d5db;
+}
+
+.customer-details-container {
+  width: 100%;
+  height: 100%;
+  grid-column: span 5;
 }
